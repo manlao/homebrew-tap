@@ -6,6 +6,7 @@ class NodeBuildAliases < Formula
   head "https://github.com/manlao/node-build-aliases.git"
 
   depends_on "nodenv"
+  depends_on "nodenv/nodenv/nodenv-update-version-defs"
 
   def install
     prefix.install Dir["*"]
