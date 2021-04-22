@@ -13,6 +13,6 @@ class NodeBuildAliases < Formula
   end
 
   test do
-    assert_match /^aliases$/, shell_output("nodenv commands")
+    assert_match(/^aliases$/, shell_output("nodenv commands"))
   end
 end
