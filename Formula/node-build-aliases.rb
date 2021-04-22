@@ -1,8 +1,8 @@
 class NodeBuildAliases < Formula
   desc "Create aliases for node-build definitions"
   homepage "https://github.com/manlao/node-build-aliases"
-  url "https://github.com/manlao/node-build-aliases/archive/1.0.1.tar.gz"
-  sha256 "47162e07b9e3bd02da212e0878c30cf0f45347398119bfbf768f0dad0266865a"
+  url "https://github.com/manlao/node-build-aliases/archive/1.1.0.tar.gz"
+  sha256 "aed42e1e170e8b2e755042cfa72f3fb7b3f76870c06221e0ad63e8c16433f0e3"
   head "https://github.com/manlao/node-build-aliases.git"
 
   depends_on "nodenv"
