@@ -6,6 +6,7 @@ class NodeBuildAliases < Formula
   head "https://github.com/manlao/node-build-aliases.git"
 
   depends_on "nodenv"
+  depends_on "node-build"
   depends_on "nodenv/nodenv/node-build-update-defs"
 
   def install
