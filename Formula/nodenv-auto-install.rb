@@ -13,6 +13,6 @@ class NodenvAutoInstall < Formula
   end
 
   test do
-    assert_match(/^Downloading node-v15.0.0/, shell_output("NODENV_VERSION=15.0.0 nodenv which node"))
+    assert_match(/versions\/15\.0\.0\/bin\/node$/, shell_output("NODENV_VERSION=15.0.0 nodenv which node"))
   end
 end
