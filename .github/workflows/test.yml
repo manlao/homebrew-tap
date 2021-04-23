@@ -12,11 +12,11 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - run: brew audit --strict Formula/*
+    - run: brew audit --strict --formulae Formula/*
 
   test:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - run: brew install Formula/*
+    - run: brew install --formulae Formula/*
     - run: brew test Formula/*
