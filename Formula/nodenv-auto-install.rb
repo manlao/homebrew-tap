@@ -1,8 +1,8 @@
 class NodenvAutoInstall < Formula
   desc "Auto install node version"
   homepage "https://github.com/manlao/nodenv-auto-install"
-  url "https://github.com/manlao/nodenv-auto-install/archive/0.0.0.tar.gz"
-  sha256 "e77c551c5892a3a8d62cfb6cf814532e67694bd746b84cb75b2758b26f3fb8bb"
+  url "https://github.com/manlao/nodenv-auto-install/archive/1.0.0.tar.gz"
+  sha256 "28f0aa277bfbf241f3c1f87559ffd8c4468612dfcd7442e9b35316c64009c50b"
   head "https://github.com/manlao/nodenv-auto-install.git"
 
   depends_on "nodenv"
