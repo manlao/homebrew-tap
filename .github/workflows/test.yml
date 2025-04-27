@@ -2,21 +2,22 @@ name: Test
 on:
   push:
     paths:
-      - 'Formula/*'
+      - "Formula/*"
   pull_request:
     paths:
-      - 'Formula/*'
+      - "Formula/*"
 
 jobs:
   lint:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: brew audit --strict --formulae Formula/*
+      - uses: actions/checkout@v4
+      - run: brew audit --strict --formulae "manlao/tap/node-build-aliases"
+      - run: brew audit --strict --formulae "manlao/tap/nodenv-auto-install"
 
   test:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: brew install --formulae Formula/*
-    - run: brew test Formula/*
+      - uses: actions/checkout@v4
+      - run: brew install --formulae Formula/*
+      - run: brew test Formula/*
