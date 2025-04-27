@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: brew tap-new manlao/tap --no-git
+      - run: cp -r Formula/* $(brew --repository)/Library/Taps/manlao/homebrew-tap/Formula
       - run: brew audit --strict --formulae "manlao/tap/node-build-aliases"
       - run: brew audit --strict --formulae "manlao/tap/nodenv-auto-install"
 
