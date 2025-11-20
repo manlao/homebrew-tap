@@ -24,4 +24,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: brew install --formulae Formula/*
-      - run: brew test Formula/*
+      - run: brew test "manlao/tap/node-build-aliases"
+      - run: brew test "manlao/tap/nodenv-auto-install"
