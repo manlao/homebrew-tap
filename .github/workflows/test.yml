@@ -23,6 +23,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - run: brew install --formulae Formula/*
+      - run: brew tap-new manlao/tap --no-git
+      - run: cp -r Formula/* $(brew --repository)/Library/Taps/manlao/homebrew-tap/Formula
       - run: brew test "manlao/tap/node-build-aliases"
       - run: brew test "manlao/tap/nodenv-auto-install"
