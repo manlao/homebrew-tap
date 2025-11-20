@@ -22,8 +22,12 @@ jobs:
   test:
     runs-on: macos-latest
     env:
-      HOMEBREW_INTERNAL_ALLOW_PACKAGES_FROM_PATHS: 1
+      HOMEBREW_NO_INSTALL_FROM_API: 1
     steps:
       - uses: actions/checkout@v4
-      - run: brew install --formulae Formula/*
-      - run: brew test Formula/*
+      - run: brew tap-new manlao/tap --no-git
+      - run: cp -r Formula/* $(brew --repository)/Library/Taps/manlao/homebrew-tap/Formula
+      - run: brew install --formulae "manlao/tap/node-build-aliases"
+      - run: brew test "manlao/tap/node-build-aliases"
+      - run: brew install --formulae "manlao/tap/nodenv-auto-install"
+      - run: brew test "manlao/tap/nodenv-auto-install"
