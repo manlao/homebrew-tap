@@ -13,20 +13,22 @@ jobs:
   lint:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: brew tap-new manlao/tap --no-git
       - run: cp -r Formula/* $(brew --repository)/Library/Taps/manlao/homebrew-tap/Formula
+      - run: brew tap nodenv/nodenv
+      - run: brew trust manlao/tap nodenv/nodenv
       - run: brew audit --strict --formulae "manlao/tap/node-build-aliases"
       - run: brew audit --strict --formulae "manlao/tap/nodenv-auto-install"
 
   test:
     runs-on: macos-latest
-    env:
-      HOMEBREW_NO_INSTALL_FROM_API: 1
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: brew tap-new manlao/tap --no-git
       - run: cp -r Formula/* $(brew --repository)/Library/Taps/manlao/homebrew-tap/Formula
+      - run: brew tap nodenv/nodenv
+      - run: brew trust manlao/tap nodenv/nodenv
       - run: brew install --formulae "manlao/tap/node-build-aliases"
       - run: brew test "manlao/tap/node-build-aliases"
       - run: brew install --formulae "manlao/tap/nodenv-auto-install"
